@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "latest",
     "react-dom": "latest",
+    "ssh2": "^1.15.0",
     "tailwind": "latest"
   },
   "scripts": {
