@@ -1,3 +1,7 @@
 export const Settings = () => {
-    return (<div></div>);
+  return (
+    <div className="flex justify-center items-center w-screen">
+      <div className="">test</div>
+    </div>
+  );
 }

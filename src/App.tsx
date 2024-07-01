@@ -1,10 +1,14 @@
 import { dependencies, devDependencies, peerDependencies } from 'package.json';
 import { NavBar } from './components/NavBar';
 import { useState } from 'react';
+import { Customizer } from './components/Customizer';
+import { Settings } from './components/Settings';
 
 export const colors = {
-  'primary': 'bg-gray-700',
-  'secondary': 'bg-purple-400'
+  'bg-primary': 'bg-gray-700',
+  'bg-secondary': 'bg-purple-400',
+  'text-primary': 'text-gray-700',
+  'text-secondary': 'text-purple-400'
 }
 
 export enum Pages {
@@ -13,9 +17,11 @@ export enum Pages {
 }
 
 export const App = () => {
-  const [page, setPage] = useState(Pages.Customizer);
+  const [page, setPage] = useState(Pages.Settings);
 
-  return (<main className={`h-screen w-screen ${colors['primary']}`}>
+  return (<main className={`h-screen w-screen ${colors['bg-primary']}`}>
     <NavBar page={page} setPage={setPage}/>
+    {page == Pages.Customizer && <Customizer/>}
+    {page == Pages.Settings && <Settings/>}
   </main>);
 }

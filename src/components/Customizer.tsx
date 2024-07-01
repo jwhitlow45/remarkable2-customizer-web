@@ -1,3 +1,3 @@
 export const Customizer = () => {
-    return (<div></div>);
+    return (<div>customizer</div>);
 }
