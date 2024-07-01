@@ -9,7 +9,7 @@ type NavBarProps = {
 
 
 export const NavBar: React.FunctionComponent<NavBarProps> = (props) => {
-  const NavBarButtonClassName = `px-5 py-3 mt-2 rounded-tl-lg rounded-tr-lg transition ease-in-out ${colors['text-white']}`;
+  const NavBarButtonClassName = `px-5 py-3 mx-1 my-2 rounded-lg transition ease-in-out ${colors['text-white']} hover:opacity-70`;
   return (<nav>
     <div className={`flex flex-row justify-between items-center w-screen mx-auto ${colors['bg-secondary']}`}>
       <div className="flex flex-row">
@@ -27,7 +27,7 @@ export const NavBar: React.FunctionComponent<NavBarProps> = (props) => {
       </div>
       <div className="flex flex-row">
         <a href="https://github.com/jwhitlow45/remarkable2-customizer-web">
-          <FontAwesomeIcon className={`px-5 py-3 fa-lg cursor-pointer ${colors['text-white']}`} icon={faCodeBranch} />
+          <FontAwesomeIcon className={NavBarButtonClassName} icon={faCodeBranch} />
         </a>
       </div>
     </div>
