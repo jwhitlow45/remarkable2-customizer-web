@@ -8,7 +8,8 @@ export const colors = {
   'bg-primary': 'bg-gray-700',
   'bg-secondary': 'bg-purple-400',
   'text-primary': 'text-gray-700',
-  'text-secondary': 'text-purple-400'
+  'text-secondary': 'text-purple-400',
+  'text-white': 'text-gray-200'
 }
 
 export enum Pages {
