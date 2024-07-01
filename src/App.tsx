@@ -3,7 +3,7 @@ import { NavBar } from './components/NavBar';
 import { useState } from 'react';
 
 export const colors = {
-  'primary': 'bg-purple-700',
+  'primary': 'bg-gray-700',
   'secondary': 'bg-purple-400'
 }
 
@@ -15,7 +15,7 @@ export enum Pages {
 export const App = () => {
   const [page, setPage] = useState(Pages.Customizer);
 
-  return (<main className="bg-gray-700 h-screen w-screen">
+  return (<main className={`h-screen w-screen ${colors['primary']}`}>
     <NavBar page={page} setPage={setPage}/>
   </main>);
 }
