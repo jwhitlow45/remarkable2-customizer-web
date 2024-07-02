@@ -1,6 +1,5 @@
-import { colors } from "@/App";
-import { useState } from "react";
-import { Toast } from "./Toast";
+import { colors, NotificationContext } from "@/App";
+import { useContext, useState } from "react";
 
 export const ipv4_addr_key = "ipv4_addr";
 export const root_password_key = "root_password";
@@ -14,18 +13,12 @@ export const Settings = () => {
 
   const [ipv4_addr, set_ipv4_addr] = useState(localStorage.getItem(ipv4_addr_key) ?? "");
   const [root_password, set_root_password] = useState(localStorage.getItem(root_password_key) ?? "");
-  const [toast_hidden, set_toast_hidden] = useState(true)
-  const [toast_message, set_toast_message] = useState("");
+  const createNotification = useContext(NotificationContext);
 
   function saveCredentials() {
     localStorage.setItem(ipv4_addr_key, ipv4_addr);
     localStorage.setItem(root_password_key, root_password);
-
-    set_toast_message("Saved credentials!")
-    set_toast_hidden(false);
-    setTimeout(() => {
-      set_toast_hidden(true);
-    }, 5000);
+    createNotification("Saved credentials!");
   }
 
   return (
@@ -44,7 +37,6 @@ export const Settings = () => {
       <p className={InfoClassName}>
         Credentials are only every stored locally and never leave your machine.
       </p>
-      <Toast message={toast_message} hidden={toast_hidden}/>
     </div>
   );
 }
